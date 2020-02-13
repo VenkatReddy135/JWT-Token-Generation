@@ -1,0 +1,17 @@
+<div class="container">
+<form [formGroup]='form'>
+    <input type="text" formControlName='uname' placeholder="username"><br><br>
+    <div *ngIf='submitted && f.uname.errors' style="color: red;">
+        <p *ngIf='submitted && f.uname.errors.required'>
+            username is required
+        </p>
+    </div>
+    <input type="password"  formControlName='pwd' placeholder="password"><br><br>
+    <div *ngIf='submitted && f.pwd.errors' style="color: red;">
+        <p *ngIf='submitted && f.pwd.errors.required'>
+            password is required
+        </p>
+    </div>
+    <button (click)='login()' class="btn btn-success">Login</button>
+</form>
+</div>
